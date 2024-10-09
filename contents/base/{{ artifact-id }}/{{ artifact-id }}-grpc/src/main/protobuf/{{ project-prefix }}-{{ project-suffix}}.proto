@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "{{ root_package }}.grpc";
+option java_outer_classname = "{{ ProjectPrefix }}Stubs";
+
+package {{ root_package }}.grpc;
+
+import "google/protobuf/wrappers.proto";
+
+service {{ ProjectPrefix }}Assessor {
+  rpc Assess{{ ProjectPrefix }} ({{ ProjectPrefix }}AssessmentRequest) returns ({{ ProjectPrefix }}AssessmentResponse);
+}
+
+message {{ ProjectPrefix }}AssessmentRequest {
+  string userId = 1;
+}
+
+message {{ ProjectPrefix }}AssessmentResponse {
+  {{ ProjectPrefix }}Level {{ projectPrefix }}Level = 1;
+}
+
+enum {{ ProjectPrefix }}Level {
+  {{ PROJECT_PREFIX }}_LOW = 0;
+  {{ PROJECT_PREFIX }}_MEDIUM = 1;
+  {{ PROJECT_PREFIX }}_HIGH = 2;
+}
