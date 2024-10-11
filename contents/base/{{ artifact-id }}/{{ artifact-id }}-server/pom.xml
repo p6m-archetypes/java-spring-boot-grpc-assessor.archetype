@@ -46,7 +46,7 @@
         </dependency>
         <dependency>
             <groupId>{{ group-id }}</groupId>
-            <artifactId>{{ org-venture-name }}-platform-logging</artifactId>
+            <artifactId>{{ org-solution-name }}-platform-logging</artifactId>
         </dependency>
         <dependency>
             <groupId>io.prometheus</groupId>
@@ -62,7 +62,7 @@
         </dependency>
         <dependency>
             <groupId>{{ group-id }}</groupId>
-            <artifactId>{{ org-venture-name }}-platform-tracing</artifactId>
+            <artifactId>{{ org-solution-name }}-platform-tracing</artifactId>
         </dependency>
     </dependencies>
 
@@ -73,7 +73,7 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <configuration>
                     <to>
-                        <image>p6m-dev.jfrog.io/{{ org-name}}-{{ venture-name }}-docker-local/applications/${project.artifactId}:${project.version}</image>
+                        <image>p6m-dev.jfrog.io/{{ org-name}}-{{ solution-name }}-docker-local/applications/${project.artifactId}:${project.version}</image>
                     </to>
                 </configuration>
             </plugin>

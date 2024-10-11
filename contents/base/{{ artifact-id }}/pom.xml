@@ -5,7 +5,7 @@
 
     <parent>
         <groupId>{{ group-id }}</groupId>
-        <artifactId>{{ org-venture-name }}-platform</artifactId>
+        <artifactId>{{ org-solution-name }}-platform</artifactId>
         <version>{{ platform-version }}</version>
     </parent>
 
@@ -23,7 +23,7 @@
     </scm>
 
     <properties>
-        <{{ group-id }}.{{ org-venture-name }}-platform>{{ platform-version }}</{{ group-id }}.{{ org-venture-name }}-platform>
+        <{{ group-id }}.{{ org-solution-name }}-platform>{{ platform-version }}</{{ group-id }}.{{ org-solution-name }}-platform>
     </properties>
 
     <modules>
@@ -40,12 +40,12 @@
         <dependencies>
             <dependency>
                 <groupId>{{ group-id }}</groupId>
-                <artifactId>{{ org-venture-name }}-platform-bom</artifactId>
-                <version>${{'{'}}{{ group-id }}.{{ org-venture-name }}-platform{{'}'}}</version>
+                <artifactId>{{ org-solution-name }}-platform-bom</artifactId>
+                <version>${{'{'}}{{ group-id }}.{{ org-solution-name }}-platform{{'}'}}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- Common Third-Party Dependency Management defined in {{ org-name }}-{{ venture-name }}-dependencies. Import Service BOMs here.-->
+            <!-- Common Third-Party Dependency Management defined in {{ org-name }}-{{ solution-name }}-dependencies. Import Service BOMs here.-->
             <dependency>
                 <groupId>org.drools</groupId>
                 <artifactId>drools-bom</artifactId>
