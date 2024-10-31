@@ -19,7 +19,7 @@ public class {{ ProjectPrefix }}AssessorCore implements {{ ProjectPrefix }}Asses
 
     @Override
     public {{ ProjectPrefix }}AssessmentResponse assess{{ ProjectPrefix }}({{ ProjectPrefix }}AssessmentRequest assessmentRequest) {
-        {{ ProjectPrefix }}Model {{ projectPrefix }}Model = new {{ ProjectPrefix }}Model(15); // Look up required data
+        {{ ProjectPrefix }}Model {{ projectPrefix }}Model = new {{ ProjectPrefix }}Model(assessmentRequest.getAttempts()); // Look up required data
         {{ ProjectPrefix }}Assessment {{ projectPrefix }}Assessment = new {{ ProjectPrefix }}Assessment({{ ProjectPrefix }}Level.{{ PROJECT_PREFIX }}_LOW);
         KieSession kieSession = kieContainer.newKieSession();
         kieSession.setGlobal("{{ ProjectPrefix }}Assessment", {{ projectPrefix }}Assessment);

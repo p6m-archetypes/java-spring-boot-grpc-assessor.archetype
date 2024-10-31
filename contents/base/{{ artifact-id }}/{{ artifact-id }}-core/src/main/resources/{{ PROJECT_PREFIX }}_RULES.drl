@@ -3,9 +3,23 @@ import {{ root_package }}.grpc.{{ ProjectPrefix }}Level
 global {{ root_package }}.core.model.{{ ProjectPrefix }}Assessment {{ ProjectPrefix }}Assessment;
 dialect  "mvel"
 
-rule "Calculate Fraud Risk - Scenario 1"
+rule "Calculate Fraud Risk - Low Risk"
+    when
+        {{ projectPrefix }}Model:{{ ProjectPrefix }}Model(attempts <= 10);
+    then
+      	{{ ProjectPrefix }}Assessment.setLevel({{ ProjectPrefix }}Level.{{ PROJECT_PREFIX }}_LOW);
+end
+
+rule "Calculate Fraud Risk - Medium Risk"
     when
         {{ projectPrefix }}Model:{{ ProjectPrefix }}Model(attempts > 10 && attempts < 100);
     then
       	{{ ProjectPrefix }}Assessment.setLevel({{ ProjectPrefix }}Level.{{ PROJECT_PREFIX }}_MEDIUM);
+end
+
+rule "Calculate Fraud Risk - High Risk"
+    when
+        {{ projectPrefix }}Model:{{ ProjectPrefix }}Model(attempts >= 100);
+    then
+      	{{ ProjectPrefix }}Assessment.setLevel({{ ProjectPrefix }}Level.{{ PROJECT_PREFIX }}_HIGH);
 end
